@@ -22,7 +22,7 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "aot": false,
+            "aot": true,
             "assets": [
               "src/favicon.ico",
               "src/assets"
@@ -34,13 +34,7 @@
               "src/assets/css/style.bundle.css"
             ],
             "scripts": [
-              "src/assets/plugins/global/plugins.bundle.js",
-              "src/assets/js/scripts.bundle.js",
-              "src/assets/plugins/custom/fullcalendar/fullcalendar.bundle.js",
-              "src/assets/js/custom/widgets.js",
-              "src/assets/js/custom/apps/chat/chat.js",
-              "src/assets/js/custom/modals/create-app.js",
-              "src/assets/js/custom/modals/upgrade-plan.js"
+              
             ]
           },
           "configurations": {
@@ -54,22 +48,20 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "6kb",
-                  "maximumError": "10kb"
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
                 }
               ]
             }
@@ -104,9 +96,20 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/assets/plugins/custom/fullcalendar/fullcalendar.bundle.css",
+              "src/assets/plugins/global/plugins.bundle.css",
+              "src/assets/css/style.bundle.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/plugins/global/plugins.bundle.js",
+              "src/assets/js/scripts.bundle.js",
+              "src/assets/plugins/custom/fullcalendar/fullcalendar.bundle.js",
+              "src/assets/js/custom/widgets.js",
+              "src/assets/js/custom/apps/chat/chat.js",
+              "src/assets/js/custom/modals/create-app.js",
+              "src/assets/js/custom/modals/upgrade-plan.js"
+            ]
           }
         },
         "lint": {
@@ -135,6 +138,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "Unslpash"
 }
