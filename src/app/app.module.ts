@@ -13,7 +13,7 @@ import { AppRoutingModule } from './app-routing.module';
     SearchComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule 
   ],
   providers: [],
